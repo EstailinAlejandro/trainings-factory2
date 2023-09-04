@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}login{% endblock %}
+
+{% block body %}
+
+
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+{% endblock %}
+
+{% block footer %}
+    <footer class="container-fluid bg-dark mt-2 ">
+
+        <div class="row bg-success pt-2">
+            <div class="col-4 text-center">
+                <i class="bi bi-geo-alt-fill text-white fs-1 float-start"></i>
+                <h4 class="ms-5">Locatie</h4>
+                <p>Tinwerf 10,2544 ED Den haag</p>
+            </div>
+
+            <div class="col-4 text-center">
+                <i class="bi bi-telephone-fill text-white fs-1 float-start"></i>
+                <h4 class="ms-5">Bellen</h4>
+                <p class="ms-5">0612345678</p>
+            </div>
+
+            <div class="col-4 text-center">
+                <i class="bi bi-envelope-at-fill text-white fs-1 float-start"></i>
+                <h4 class="ms-5">Mailen</h4>
+                <p class="ms-5">trainingsfactory@service.nl</p>
+            </div>
+        </div>
+
+
+        <div class="ms-5 ps-5 row text-center">
+            <div class="col">
+                <i class="bi bi-facebook  fs-2 text-white me-5"></i>
+                <i class="bi bi-instagram fs-2 text-white me-5"></i>
+                <i class="bi bi-twitter fs-2 text-white me-5"></i>
+                <i class="bi bi-whatsapp fs-2 text-white me-5"></i>
+            </div>
+        </div>
+
+
+
+    </footer>
+
+
+{% endblock %}

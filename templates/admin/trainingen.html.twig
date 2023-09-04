@@ -1,0 +1,90 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Admin Trainingen{% endblock %}
+
+{% block body %}
+
+    {% for msg in app.session.flashBag.get('succes') %}
+        <div class="alert alert-success">
+            {{ msg }}
+        </div>
+    {% endfor %}
+
+    {% for msg in app.session.flashBag.get('delete') %}
+        <div class="alert alert-warning">
+            {{ msg }}
+        </div>
+    {% endfor %}
+
+
+      <h4>Trainingen</h4>
+    <ul>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Naam</th>
+                <th scope="col">Beschrijving</th>
+                <th scope="col">Duur</th>
+                <th scope="col">Extra kosten</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for training in trainingen %}
+                <tr>
+
+                    <td>{{ training.name }}</td>
+                    <td class="col-3">{{ training.description }}</td>
+                    <td>{{ training.duration }}</td>
+                    <td>{{ training.extra_costs }}</td>
+                    <td><a href="{{ path('training_update', {id:training.id})}} "><button class="btn btn-primary">Wijzigen</button></a></td>
+                    <td><a href="{{ path('training_delete', {id:training.id}) }} "><button class="btn btn-danger">Verwijderen</button></a></td>
+                </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+    </ul>
+
+    <a href="{{ path('training_insert') }}"><button class="btn btn-primary">insert training</button></a>
+
+
+{% endblock %}
+
+{% block footer %}
+    <footer class="container-fluid bg-dark mt-5">
+
+        <div class="row bg-success pt-2">
+            <div class="col-4 text-center">
+                <i class="bi bi-geo-alt-fill text-white fs-1 float-start"></i>
+                <h4 class="ms-5">Locatie</h4>
+                <p>Tinwerf 10,2544 ED Den haag</p>
+            </div>
+
+            <div class="col-4 text-center">
+                <i class="bi bi-telephone-fill text-white fs-1 float-start"></i>
+                <h4 class="ms-5">Bellen</h4>
+                <p class="ms-5">0612345678</p>
+            </div>
+
+            <div class="col-4 text-center">
+                <i class="bi bi-envelope-at-fill text-white fs-1 float-start"></i>
+                <h4 class="ms-5">Mailen</h4>
+                <p class="ms-5">trainingsfactory@service.nl</p>
+            </div>
+        </div>
+
+
+        <div class="ms-5 ps-5 row text-center">
+            <div class="col">
+                <i class="bi bi-facebook  fs-2 text-white me-5"></i>
+                <i class="bi bi-instagram fs-2 text-white me-5"></i>
+                <i class="bi bi-twitter fs-2 text-white me-5"></i>
+                <i class="bi bi-whatsapp fs-2 text-white me-5"></i>
+            </div>
+        </div>
+
+
+
+    </footer>
+
+{% endblock %}

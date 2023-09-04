@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+            <link rel="stylesheet" href="css/style.css">
+        {% endblock %}
+
+        {% block javascripts %}
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+        {% endblock %}
+    </head>
+
+
+    <body class="bg-light">
+    <style>
+        body {
+            overflow-x: hidden; /* Hide horizontal scrollbar */
+        }
+    </style>
+
+    <nav class="navbar navbar-expand-lg sticky-top bg-success">
+        <div class="container-fluid">
+           <div class="container-fluid"> <a class="navbar-brand text-light fs-4 ms-2 me-3 float-start" href="index.php"><img src="{{ asset('img/logo.jpg') }}" width="80px"></a>
+
+
+               <ul class="navbar-nav justify-content-center text-center">
+                   <li class="nav-item">
+                       <a class="nav-link active" aria-current="page" href="#"><h1 class="text-light fw-semibold" >Trainings Factory</h1></a>
+                   </li>
+
+               </ul>
+               <div class="btn btn-outline-primary float-end ms-2"><a class="text-decoration-none text-light" href="{{ path('register') }}">Registreren</a></div>
+               <div class="btn btn-primary float-end"><a class="text-decoration-none text-light" href="{{ path('login') }}">Inloggen</a></div>
+           </div>
+
+
+
+
+
+
+
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid ">
+            <div class="container-fluid ">
+
+                <ul class="navbar-nav justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{ path('app_home') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_training') }}">Trainingen</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_contact') }}">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid bg-light p-0">
+
+
+
+        <img src="img/banner.jpg" alt="" class=""  height="150xp" width="100%" >
+        {% block body %}{% endblock %}
+
+    </div>
+    {% block footer %}
+    <footer class="container-fluid bg-dark mt-2 fixed-bottom">
+
+        <div class="row bg-success pt-2">
+            <div class="col-4 text-center">
+                <i class="bi bi-geo-alt-fill text-white fs-1 float-start"></i>
+                <h4 class="ms-5">Locatie</h4>
+                <p>Tinwerf 10,2544 ED Den haag</p>
+            </div>
+
+            <div class="col-4 text-center">
+                <i class="bi bi-telephone-fill text-white fs-1 float-start"></i>
+                <h4 class="ms-5">Bellen</h4>
+                <p class="ms-5">0612345678</p>
+            </div>
+
+            <div class="col-4 text-center">
+                <i class="bi bi-envelope-at-fill text-white fs-1 float-start"></i>
+                <h4 class="ms-5">Mailen</h4>
+                <p class="ms-5">trainingsfactory@service.nl</p>
+            </div>
+        </div>
+
+
+        <div class="ms-5 ps-5 row text-center">
+            <div class="col">
+                <i class="bi bi-facebook  fs-2 text-white me-5"></i>
+                <i class="bi bi-instagram fs-2 text-white me-5"></i>
+                <i class="bi bi-twitter fs-2 text-white me-5"></i>
+                <i class="bi bi-whatsapp fs-2 text-white me-5"></i>
+            </div>
+        </div>
+
+
+
+    </footer>
+    {% endblock %}
+    </body>
+</html>

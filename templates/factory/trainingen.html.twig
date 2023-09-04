@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Trainingen{% endblock %}
+
+{% block body %}
+
+    <h3 class="text-center mt-5 mb-5">Welkom bij TrainingsFactory</h3>
+<div class="row justify-content-center ">
+    <div class="card bg-dark text-light col-3 rounded-0">
+      <h4>Trainingen</h4>
+    <ul>
+        {% for training in trainingen %}
+            <li>
+                {{ training.name }}
+            </li>
+        {% endfor %}
+
+    </ul>
+    </div>
+
+</div>
+
+{% endblock %}

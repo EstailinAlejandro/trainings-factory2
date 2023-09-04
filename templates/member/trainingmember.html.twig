@@ -1,0 +1,72 @@
+{% extends 'member.html.twig' %}
+
+{% block title %}Hello MemberController!{% endblock %}
+
+{% block body %}
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ label }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-6 g-3 mt-5 pb-5 justify-content-center container-fluid ">
+        {% for training in trainingen %}
+            <div class="col">
+                <div class="card bg-black border border-success">
+                    <div class="card-body text-center">
+                        <h4 class="card-text text-white">{{ training.name }}</h4>
+                        <p class="card-text text-white">{{ training.description }}</p>
+                        <p class="card-text text-white"> duur: {{ training.duration }}</p>
+                        <a type="button" class="btn btn-success" href="{{ path("lessen", { id:training.id}) }}">bekijk</a>
+                    </div>
+                </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+
+
+
+
+
+{% endblock %}
+{% block footer %}
+    <footer class="container-fluid bg-dark mt-2">
+
+        <div class="row bg-success pt-2">
+            <div class="col-4 text-center">
+                <i class="bi bi-geo-alt-fill text-white fs-1 float-start"></i>
+                <h4 class="ms-5">Locatie</h4>
+                <p>Tinwerf 10,2544 ED Den haag</p>
+            </div>
+
+            <div class="col-4 text-center">
+                <i class="bi bi-telephone-fill text-white fs-1 float-start"></i>
+                <h4 class="ms-5">Bellen</h4>
+                <p class="ms-5">0612345678</p>
+            </div>
+
+            <div class="col-4 text-center">
+                <i class="bi bi-envelope-at-fill text-white fs-1 float-start"></i>
+                <h4 class="ms-5">Mailen</h4>
+                <p class="ms-5">trainingsfactory@service.nl</p>
+            </div>
+        </div>
+
+
+        <div class="ms-5 ps-5 row text-center">
+            <div class="col">
+                <i class="bi bi-facebook  fs-2 text-white me-5"></i>
+                <i class="bi bi-instagram fs-2 text-white me-5"></i>
+                <i class="bi bi-twitter fs-2 text-white me-5"></i>
+                <i class="bi bi-whatsapp fs-2 text-white me-5"></i>
+            </div>
+        </div>
+
+
+
+    </footer>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends 'member.html.twig' %}
+
+{% block title %} Contact{% endblock %}
+
+{% block body %}
+
+    <div class="container justify-content-center mt-5">
+    <div class="row bg-dark text-white">
+        <h3 class="text-center">Wilt u nog contact nemen?</h3>
+
+        <div class="col mt-5 pt-5 ms-5 ps-5">
+            <p>
+                <i class="bi bi-telephone text-success fs-3 mb-5"></i> Bel ons op 0612345678
+                <br><br>  <i class="bi bi-envelope-at text-success fs-3 mb-5"></i> Mail ons naar trainingsfactory@service.nl
+                <br><br>  <i class="bi bi-geo-alt text-success fs-3"></i> Of kom naar Tinwerf 10 (Zie kaart)
+            </p>
+        </div>
+
+
+
+
+        <div class="col">  <iframe class="justify-content-end mt-5 mb-5 " src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2453.9423125711237!2d4.
+    247399515789798!3d52.04436357972699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5
+    b171dd756573%3A0x1cc7d9482ccff082!2sTinwerf%2010%2C%202544%20ED%20Den%20Haag!5e0!3m2!1snl!2snl
+    !4v1679946476473!5m2!1snl!2snl" width="600" height="450" style="" allowfullscreen="" loading="lazy"
+                                   referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        </div></div>
+
+{% endblock %}
+        {% block footer %}
+        <footer class="container-fluid bg-dark mt-2 ">
+
+            <div class="row bg-success pt-2">
+                <div class="col-4 text-center">
+                    <i class="bi bi-geo-alt-fill text-white fs-1 float-start"></i>
+                    <h4 class="ms-5">Locatie</h4>
+                    <p>Tinwerf 10,2544 ED Den haag</p>
+                </div>
+
+                <div class="col-4 text-center">
+                    <i class="bi bi-telephone-fill text-white fs-1 float-start"></i>
+                    <h4 class="ms-5">Bellen</h4>
+                    <p class="ms-5">0612345678</p>
+                </div>
+
+                <div class="col-4 text-center">
+                    <i class="bi bi-envelope-at-fill text-white fs-1 float-start"></i>
+                    <h4 class="ms-5">Mailen</h4>
+                    <p class="ms-5">trainingsfactory@service.nl</p>
+                </div>
+            </div>
+
+
+            <div class="ms-5 ps-5 row text-center">
+                <div class="col">
+                    <i class="bi bi-facebook  fs-2 text-white me-5"></i>
+                    <i class="bi bi-instagram fs-2 text-white me-5"></i>
+                    <i class="bi bi-twitter fs-2 text-white me-5"></i>
+                    <i class="bi bi-whatsapp fs-2 text-white me-5"></i>
+                </div>
+            </div>
+
+
+
+        </footer>
+    {% endblock %}

@@ -1,0 +1,80 @@
+{% extends 'member.html.twig' %}
+
+{% block title %}Hello KlantController!{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Profiel bekijken en aanpassen</h1>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-4 mt-3 justify-content-center container-fluid">
+            <table class="table bg-light">
+                <tr>
+                    <th>
+
+                        email
+                    </th>
+
+                    <th>
+
+                        fname
+                    </th>
+
+                    <th>
+
+                        prepovision
+                    </th>
+                    <th>
+
+                        lname
+                    </th>
+
+                    <th>
+                        dateofbirth
+                    </th>
+                    <th>
+                        street
+                    </th>
+                    <th>
+                        place
+                    </th>
+                </tr>
+
+                <tr>
+                    <td>
+
+                        {{ app.user.email }}
+                    </td>
+                    <td>
+                        {{ app.user.firstname }}
+                    </td>
+                    <td>
+                        {{ app.user.preprovision }}
+                    </td>
+
+                    <td>
+                        {{ app.user.lastname }}
+                    </td>
+
+                    <td>
+
+                        {{ app.user.dateofbirth|date('d M Y') }}
+                    </td>
+
+                    <td>
+
+                        {{ app.user.street }}
+                    </td>
+                    <td>
+
+                        {{ app.user.place  }}
+                    </td>
+                </tr>
+
+            </table>
+      <a class="btn btn-success" href="{{ path ('user_profiel_update') }}">Update</a>
+
+
+
+        </div>
+    </div>
+{% endblock %}
